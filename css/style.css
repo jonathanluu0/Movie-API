@@ -1,6 +1,11 @@
 .container{
   display:flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  width: 60vw;
+  height: auto;
+  margin-top:10%;
+  margin-left: 23%;
 }
 .bg-light{
   background-color: #1f1f1f!important;
@@ -12,7 +17,22 @@
   width:100%;
 }
 
-.Now_Playing_List{
-  margin-top:10%;
-  margin-left: 20%;
+.Now_Playing_Card{
+  width:40%;
+  margin:2%;
+}
+.card{
+  display: block;
+}
+.card-img{
+  width: 50%;
+  float: left;
+  /* max-height: 50%;
+  max-width: auto; */
+}
+.card-body{
+  float: right;
+}
+.top{
+  padding-left: 25%
 }
