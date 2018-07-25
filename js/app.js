@@ -1,17 +1,14 @@
 console.log("code works")
+var apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed";
+var url = 'https://api.themoviedb.org/3/movie/now_playing'
 
 function goTo(event){
-  var trailer_url = 'https://api.themoviedb.org/3/movie/' + this.dataset.videoid + '/videos?'
+  var trailer_url = 'https://api.themoviedb.org/3/movie/' + event.dataset.videoid + '/videos?'
   $.get(trailer_url, {api_key: apiKey}).done(function(data){
-    console.log(this.dataset.videoid);
     window.open("https://www.youtube.com/watch?v=" + data.results[0].key)
   }); //$.get ending bracket
 } // goTo ending bracket
 $(document).ready(function() {
-
-  var apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed";
-  var url = 'https://api.themoviedb.org/3/movie/now_playing'
-
   function movieCards(){
     $.get(url, {api_key: apiKey}).done(function(data){
         for(var x=0; x<data.results.length; x++){
@@ -25,13 +22,13 @@ $(document).ready(function() {
           var movie_id = data.results[x].id;
           // .css("transform", "rotate(progress_rotate + deg)");
           $("#container").append(`
-            <div class='Now_Playing_Card'>
+            <div class='Now_Playing_Card' id="Cards">
               <img class="card-img" src="` + img_url + `"  alt="Movie Image">
 
               <table>
                 <tr>
                   <td>
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-sm-6" id="progress_bar">
                       <div class="progress blue">
                         <span class="progress-left">
                           <span class="progress-bar"></span>

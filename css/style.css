@@ -1,3 +1,11 @@
+body{
+  background-color: #CEFAD6;
+}
+
+h6{
+  font-size: 14px;
+}
+
 #container{
   display:flex;
   flex-wrap: wrap;
@@ -16,13 +24,23 @@
 }
 .navigation{
   width:100%;
-}
+  padding:30px;
+  font-size: 20px;
+  padding-left: 17%;
+  font-family: 'Audiowide', cursive;
 
+}
+#Cards{
+  height:352px;
+  border-radius: 5px;
+}
 .Now_Playing_Card{
   display: block;
   width: 40%;
   border: solid 1px black;
   margin: 20px;
+  background-color: #FEFEFE;
+  box-shadow: 2px 2px 20px 2px #707170;
 }
 .card-img{
   width: 40%;
@@ -32,22 +50,24 @@
 .card-body{
   width: 55%;
   float: right;
-  /* vertical-align:top; */
   margin-right:10px;
 }
+#progress_bar{
+  margin-top: 10px;
+}
 .card-title{
-  /* margin-left:350px; */
+  margin-top:20px;
 }
 .header{
   width:100%;
 }
-/*
+
+
 .card-text {
+  font-size: 14px;
   height: 150px;
-  white-space: wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
+  overflow:scroll;
+}
 
 .progress .progress-value{
     width: 90%;
