@@ -14,7 +14,7 @@ $(document).ready(function() {
         for(var x=0; x<data.results.length; x++){
           var img_url = "https://image.tmdb.org/t/p/w300" + data.results[x].poster_path;
           var movie_text = data.results[x].overview;
-          var title = data.results[x].original_title;
+          var title = data.results[x].title;
           var release_date = data.results[x].release_date;
           var voteAverage = ((data.results[x].vote_average) * 10);
           var progress_rotate = (voteAverage/100)*360;
@@ -28,15 +28,19 @@ $(document).ready(function() {
               <table>
                 <tr>
                   <td>
-                    <div class="col-md-3 col-sm-6" id="progress_bar">
-                      <div class="progress blue">
+                    <div class="col-sm-3 col-md-2 percent-progress">
+                      <div class="progress" id="percent-circle" data-percentage="` + voteAverage + `">
                         <span class="progress-left">
                           <span class="progress-bar"></span>
                         </span>
                         <span class="progress-right">
                           <span class="progress-bar"></span>
                         </span>
-                        <div class="progress-value">` + voteAverage + "%" + `</div>
+                        <div class="progress-value">
+                          <div id="vote-percentage">
+                            `+ voteAverage + "%" + `<br>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </td>
